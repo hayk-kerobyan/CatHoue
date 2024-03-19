@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CatHouse</string>
+    <string name="error_load_cat_details">Failed to load cat details</string>
+    <string name="cd_cat_image">Cat image %1$s</string>
+    <string name="retry">Retry</string>
+    <string name="error_refresh_failed">Failed to fetch fresh data</string>
+    <string name="label_tags">Tags: %1$s</string>
+    <string name="label_end_of_list">The end is reached</string>
+</resources>
