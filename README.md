@@ -25,8 +25,6 @@ The app doesn't reflect much information as the Cataas API doesn't contain much.
 - Image loading failures
 
 ![architecture.png](screenshots/tablet.png)
-![architecture.png](screenshots/error_handling_refresh.png)
-![architecture.png](screenshots/error_handling_append.png)
 
 # Architecture
 The application is built using the Model-View-Intent (MVI) architecture along with Clean Architecture principles. The package structure is designed for easy migration to a multi-module setup.
