@@ -27,7 +27,7 @@ The app doesn't reflect much information as the Cataas API doesn't contain much.
 ![architecture.png](screenshots/tablet.png)
 
 # Architecture
-The application is built using the Model-View-Intent (MVI) architecture along with Clean Architecture principles. The package structure is designed for easy migration to a multi-module setup.
+The application is built using the Model-View-ViewModel (MVVM) architecture along with Clean Architecture principles. The package structure is designed for easy migration to a multi-module setup.
 ![architecture.png](screenshots/architecture.png)
 
 # Presenter Layer
