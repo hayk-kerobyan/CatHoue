@@ -19,13 +19,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.Dp
 import coil.ImageLoader
 import coil.compose.SubcomposeAsyncImage
 import com.example.cathouse.R
 import com.example.cathouse.common.ui.theme.dimens
 import com.example.cathouse.features.cats.layers.domain.model.Cat
+import com.example.cathouse.features.cats.utils.resize
 
 @Composable
 fun CatListItemContainer(
@@ -89,12 +90,16 @@ fun CatListImageItem(
     CatListItemContainer(
         onClick = { onClick(cat) }
     ) {
+        val imageSize = LocalDensity.current.run {
+            MaterialTheme.dimens.listItemImageSize.toPx()
+        }
+
         SubcomposeAsyncImage(
             imageLoader = imageLoader,
             modifier = Modifier
                 .size(MaterialTheme.dimens.listItemImageSize)
                 .clip(CircleShape),
-            model = imageOfWidth(cat.imageUrl, MaterialTheme.dimens.listItemImageSize),
+            model = cat.imageUrl.resize(imageSize),
 
             contentScale = ContentScale.Crop,
             contentDescription = stringResource(R.string.cd_cat_image, cat.tags.joinToString()),
@@ -106,10 +111,4 @@ fun CatListImageItem(
             }
         )
     }
-}
-
-fun imageOfWidth(imageUrl: String, dimen: Dp) = buildString {
-    append(imageUrl)
-    append("?width=")
-    append(dimen.value)
 }
